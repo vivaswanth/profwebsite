@@ -1,0 +1,53 @@
+<div class="main-content-section">
+    <div class="container row" *ngIf="courseData.courseCode">
+        <div class="col-md-12">
+            <h5><b>{{courseData.courseName}} ({{courseData.courseCode}})</b></h5>
+            <hr>
+            <p>{{courseData.courseDescription}}</p>
+        </div>
+        <div class="col-md-12">
+            <h6>Lecture Notes</h6>
+            <div class="row">
+                <div class="col-md-4 course-content" *ngFor="let a of courseData.lectureNotes">
+                    <a href="{{a.url}}" target="new">
+                        <i class="material-icons mdi mdi-pdf-box"></i> {{a.name}}</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="col-md-12">
+            <h6>Assignments</h6>
+            <div class="row">
+                <div class="col-md-3 course-content" *ngFor="let a of courseData.assignments">
+                    <a href="{{a.url}}" target="new">
+                        <i class="material-icons mdi mdi-pdf-box"></i> {{a.name}}</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="col-md-12">
+            <h6>Projects</h6>
+            <div class="row">
+                <div class="col-md-4 course-content" *ngFor="let a of courseData.projects">
+                    <a href="{{a.projectUrl}}" target="new">
+                        <i class="material-icons mdi mdi-pdf-box"></i> project</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="col-md-12">
+            <h6>Exams</h6>
+            <div class="row">
+                <div class="col-md-4 course-content" *ngFor="let a of courseData.exams">
+                    <a href="{{a.url}}" target="new">
+                        <i class="material-icons mdi mdi-pdf-box"></i> {{a.name}}</a>
+                </div>
+            </div>
+            <hr>
+        </div>
+
+    </div>
+</div>

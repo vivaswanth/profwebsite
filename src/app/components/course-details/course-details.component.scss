@@ -1,0 +1,33 @@
+.course-content {
+    padding: 10px;
+    max-height: 120px;
+    display: block;
+    display: -webkit-box;
+}
+
+.course-content a {
+    background: rgba(245, 245, 245, 0.9);
+    padding: 10px;
+    display: block;
+    border-radius: 3px;
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: left;
+}
+
+.course-content :hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.22);
+    transition: 0.5s;
+}
+
+.material-icons {
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    padding-left: 3.5px;
+    background: #fff;
+    vertical-align: middle;
+    font-size: 24px;
+}

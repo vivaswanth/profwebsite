@@ -1,0 +1,29 @@
+.page-content {
+    background-color: #fff;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.content {
+    max-width: 1000px;
+    margin: auto;
+    overflow-y: hidden;
+    background-color: #fff;
+}
+
+.title {
+    font-size: 24px;
+    font-family: 'Roboto' sans-serif;
+    font-weight: 400;
+    margin-left: 0px;
+    color: rgb(103,58,183);
+}
+
+.subTitle {
+    font-size: 14px;
+    margin-left: 0px;
+}
+
+.mdl-navigation__link {
+    color: #333;
+}

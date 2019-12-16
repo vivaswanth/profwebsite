@@ -1,0 +1,149 @@
+<div class="main-content-section">
+    <div class="container">
+        <h5><b>Softwares</b></h5>
+        <hr>
+        <div class="row">
+            <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                <div class="mdl-tabs__tab-bar" style="border-bottom: 0px; -webkit-justify-content: left; justify-content: left; padding-left: 15px">
+                    <a href="softwares/#openStudio" class="mdl-tabs__tab is-active">Open Studio</a>
+                    <a href="#openFoam" class="mdl-tabs__tab">Open Foam</a>
+                    <a href="#ansysFluent" class="mdl-tabs__tab">Ansys Fluent</a>
+                </div>
+
+                <div class="mdl-tabs__panel is-active" id="openStudio">
+                    <div class="container" style="padding: 20px">
+                        <!--some-->
+                        <div id="accordion">
+                            <div class="card card-accordion">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#hvacSystem">
+                                       <i class="material-icons mdi mdi-folder-outline"></i> HVAC System Examples
+                                    </a>
+                                </div>
+                                <div id="hvacSystem" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <h5>VRF</h5>
+                                        <p>
+                                            This post aims to introduce application of Variable Refrigerant Flow (VRF) in
+                                            OpenStudio modeling. In some applications, when the requirements of ventilation are
+                                            not very demanding and the outdoor air flow required is low, it is possible to split the
+                                            ventilation and conditioning systems. In this scenario, the VRF system is a
+                                            decentralized system used to heat and cool the spaces using complex vapor
+                                            compression cycle. A central outdoor unit (condenser) is connected to the indoor units
+                                            (evaporators) and the refrigerant is driven by inverter driven compressors, which vary
+                                            the speed by changing the frequency of the power supplied to the compressor. As the
+                                            compressor speed changes, so do the amount of refrigerant delivered by the
+                                            compressor. Each indoor unit has its own metering device that sends a demand to the
+                                            central unit, which delivers the amount of refrigerant needed to meet the requirements
+                                            of the indoor unit.
+                                        </p>
+                                        <p>
+                                            As in other applications, the vapor compression cycle is intended to be used for cooling
+                                            mode. However, as it is well-known, when running in reverse, this cycle also can be
+                                            used for heating mode. In addition, the VRF system has a special feature: it can reject
+                                            the heat coming from one space in cooling mode to another in heating mode. These
+                                            features make the VRF system ideally suited for all applications that have part load
+                                            requirements based on usage or building orientation.
+                                            The advantages of this system, among others, are:
+                                        </p>
+                                        <ul>
+                                            <li>No ductwork is required</li>
+                                            <li>Reduced noise levels due to fans and ducts</li>
+                                            <li>Less maintenance is required; Just changing filters and cleaning coils are
+                                                required</li>
+                                        </ul>
+                                        
+                                        <p>However, there is a need to consider couple of technical constraints. Examples are:</p>
+                                        <ul>
+                                            <li>Max height difference between outdoor and indoor units: 360 ft (110 m).</li>
+                                            <li>Max altogether pipe length: 3,280 ft (1,093 m).</li>
+                                            <li>Max one loop pipe length: 690 ft (230 m).</li>
+                                            <li>Max indoor units supplied by one outdoor unit: 48.</li>
+                                        </ul>
+                                        <p>Read More about VRF systems <a href="https://firebasestorage.googleapis.com/v0/b/profwebsite-19dce.appspot.com/o/softwares%2FVRF%2FVRF%20Description.docx?alt=media&token=fc07e20d-a4e6-428e-8aa4-110c26253424">here</a></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-accordion">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#fixingErrros">
+                                        <i class="material-icons mdi mdi-folder-outline"></i> Fixing Errors
+                                    </a>
+                                </div>
+                                <div id="fixingErrros" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <h5>Vertex Mismatch</h5>
+                                        <p>One of the common errors in creating geometry using FloorSpaceJS is the vertex size mismatch </p>
+                                        <p>
+                                            <b style="background: rgba(245, 245, 245, 1);">
+                                                ** ~~~ ** Defaults, constant throughout the year of (18.0) will be used.
+                                                ** Severe ** RoofCeiling:Detailed=&quot;FACE 215&quot;, Vertex size mismatch between base surface
+                                                :FACE 215 and outside boundary surface: FACE 645
+                                                ** ~~~ ** The vertex sizes are 5 for base surface and 4 for outside boundary surface.
+                                                Please check inputs.
+                                            </b>
+                                        </p>
+                                        <p>
+                                            Basically, the error mentions there are inconsistency between the number of vertices for two
+                                            neighboring faces (Face 215 and Face 645 in this case). One possible reason is due to the
+                                            addition of space types and thermal zones, this severe error occurs.
+                                        </p>
+                                        <p>
+                                            A solution to fix this error is to first identify the faces.This face needs to have four vertices in the OSM model. Open the model with two different
+                                            editors to compare the two mentioned faces in the error. Please refer the below images to gain insight.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-accordion">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#images">
+                                        <i class="material-icons mdi mdi-image-outline"></i>Images
+                                    </a>
+                                </div>
+                                <div id="images" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <img src="./../../../assets/img/software/Face 215.png" height="400" style="width: 100%">
+                                        <img src="./../../../assets/img/software/Face 215 and Face 645 Fixed.png" height="400" style="width: 100%">
+                                        <img src="./../../../assets/img/software/Face 215 and Face 645 Original.png" height="400" style="width: 100%">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-accordion">
+                                <div class="card-header">
+                                    <a class="collapsed card-link" data-toggle="collapse" href="#download_openStudio">
+                                        <i class="material-icons mdi mdi-file-download-outline"></i>Downloadables
+                                    </a>
+                                </div>
+                                <div id="download_openStudio" class="collapse" data-parent="#accordion">
+                                    <div class="card-body">
+                                        <h5>Please find the github repository here and download it.</h5>
+                                        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" href="https://github.com/muh182/OpenStudioExampleModels" target="new">Download OpenStudio Models</a>
+                                        <a href="https://firebasestorage.googleapis.com/v0/b/profwebsite-19dce.appspot.com/o/softwares%2FVRF%2FVRF%20Description.docx?alt=media&token=fc07e20d-a4e6-428e-8aa4-110c26253424" target="new">
+                                            <i class="material-icons mdi mdi-pdf-box"></i> VRF Systems - Read more
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+                        <!--some-->
+                    </div>
+                </div>
+
+                <div class="mdl-tabs__panel" id="openFoam">
+                    <div class="container" style="padding: 20px">
+                        <p>Software yet to be published</p>
+                    </div>
+                </div>
+
+                <div class="mdl-tabs__panel" id="ansysFluent">
+                    <div class="container" style="padding: 20px">
+                        <p>Software yet to be published</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
